@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  DigitalArchiveRequest:
+    build:
+      context: ./Banhcafe.Microservices.DigitalArchiveRequest
+      dockerfile: src/Api/Dockerfile
+    image: DigitalArchiveRequest
+    container_name: DigitalArchiveRequest
+    environment:
+      ASPNETCORE_ENVIRONMENT: development
+    ports:
+      - "5000:5000"
+    network_mode: bridge
