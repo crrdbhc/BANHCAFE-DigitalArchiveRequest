@@ -1,16 +1,17 @@
-using Banhcafe.Microservices.DigitalArchiveRequest.Api.Endpoints.Filters;
+﻿using Banhcafe.Microservices.DigitalArchiveRequest.Api.Endpoints.Filters;
 using Banhcafe.Microservices.DigitalArchiveRequest.Api.Options;
 using Banhcafe.Microservices.DigitalArchiveRequest.Core.Common.Contracts.Response;
-using Banhcafe.Microservices.DigitalArchiveRequest.Core.Todos.Contracts.Request;
+using Banhcafe.Microservices.DigitalArchiveRequest.Core.DigitalInfo.Queries;
 using MediatR;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.FeatureManagement;
 using Microsoft.FeatureManagement.Mvc;
 
 namespace Banhcafe.Microservices.DigitalArchiveRequest.Api.Endpoints;
 
-public static class TodosEndpoints
+public static class DigitalArchiveComparerEndpoints
 {
-    public static IEndpointRouteBuilder AddTodosEndpoints(this IEndpointRouteBuilder endpoints)
+    public static IEndpointRouteBuilder AddDigitalArchiveComparerEndpoints(this IEndpointRouteBuilder endpoints)
     {
         var versionSet = endpoints
             .NewApiVersionSet()
@@ -19,22 +20,27 @@ public static class TodosEndpoints
             .Build();
 
         var backOfficeEndpoints = endpoints
-            .MapGroup("/backOffice/todos")
+            .MapGroup("/backOffice/archive-digital-comparer")
             .AddEndpointFilter<FeatureGateEndpointFilter>()
-            .WithTags("Todos")
+            .WithTags("DigitalInfo")
             .WithApiVersionSet(versionSet)
             .RequireAuthorization(AuthenticationPolicy.BackOffice);
 
         _ = backOfficeEndpoints
-            .MapPost(
+            .MapGet(
                 "",
                 static async (
                     IFeatureManager features,
                     IMediator mediator,
-                    CreateTodoRequest request
+                    [FromQuery] int? agencyNum,
+                    [FromQuery] string? productNum,
+                    [FromQuery] string? clientNum,
+                    [FromQuery] int? terminalId,
+                    [FromQuery] int? page,
+                    [FromQuery] int? size
                 ) =>
                 {
-                    var result = await mediator.Send(request);
+                    var result = await mediator.Send(new ListDigitalArchiveComparerQuery { AgencyNum = agencyNum, ProductNum = productNum, ClientNum = clientNum });
 
                     if (result.ValidationErrors.Count > 0)
                     {
@@ -49,10 +55,10 @@ public static class TodosEndpoints
                     return Results.Ok(result);
                 }
             )
-            .WithDisplayName("CreateTodo")
-            .WithName("CreateTodo")
-            .WithMetadata(new FeatureGateAttribute("BOF-create_todo"))
-            .Produces<ApiResponse<CreateTodoRequest>>()
+            .WithDisplayName("GetDigitalArchiveComparerInfo")
+            .WithName("GetDigitalArchiveComparerInfo")
+            .WithMetadata(new FeatureGateAttribute("BOF-get_DigitalInfo"))
+            .Produces<ApiResponse<ListDigitalArchiveComparerQuery>>()
             .ProducesProblem(StatusCodes.Status400BadRequest)
             .ProducesProblem(StatusCodes.Status500InternalServerError)
             .ProducesValidationProblem();

@@ -1,7 +1,7 @@
 ﻿using System.Net;
 using Banhcafe.Microservices.DigitalArchiveRequest.Core.Common;
-using Banhcafe.Microservices.DigitalArchiveRequest.Core.Todos.Contracts.Data;
-using Banhcafe.Microservices.DigitalArchiveRequest.Core.Todos.Ports;
+using Banhcafe.Microservices.DigitalArchiveRequest.Core.DigitalInfo.Models;
+using Banhcafe.Microservices.DigitalArchiveRequest.Core.DigitalInfo.Ports;
 using Banhcafe.Microservices.DigitalArchiveRequest.Infrastructure.Common.Ports;
 using Banhcafe.Microservices.DigitalArchiveRequest.Infrastructure.Persistence;
 using Microsoft.Extensions.Configuration;
@@ -27,20 +27,20 @@ public static class DependencyInjection
                 static (sp, client) =>
                 {
                     var dbSettings = sp.GetRequiredService<IOptionsMonitor<DatabaseSettings>>();
-                    client.BaseAddress = new Uri(dbSettings.CurrentValue.DatabaseApiUrl);
+                    client.BaseAddress = new Uri(
+                        dbSettings.Get(DatabaseSettingsInstances.SQL).DatabaseApiUrl
+                    );
                     client.Timeout = TimeSpan.FromMinutes(3);
                 }
             )
             .ConfigurePrimaryHttpMessageHandler(PrimaryHttpMessageHandler)
             .AddResilienceHandler("db-client-pipeline", BasicHttpClientResiliencePipeline);
 
-        services.AddRefitClient<ISqlDbConnectionApiExtensions<object, IEnumerable<TodoDto>>>(
-            settingsAction: (sp) => new() { },
-            httpClientName: "DBClient"
-        );
+        services.AddRefitClient<
+            ISqlDbConnectionApiExtensions<object, IEnumerable<DigitalArchiveComparerBase>>
+        >(settingsAction: (sp) => new() { }, httpClientName: "DBClient");
 
-        services.AddScoped<ITodosRepository, TodosRepository>();
-
+        services.AddScoped<IDigitalArchiveComparerRepository, DigitalArchiveComparerRepository>();
         return services;
     }
 

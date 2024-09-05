@@ -1,7 +1,5 @@
 using System.Reflection;
 using Banhcafe.Microservices.DigitalArchiveRequest.Core.Common.Behaviours;
-using Banhcafe.Microservices.DigitalArchiveRequest.Core.Todos.Contracts.Request;
-using Banhcafe.Microservices.DigitalArchiveRequest.Core.Todos.Validators;
 using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
@@ -21,7 +19,8 @@ public static class DependencyInjection
                 typeof(UnhandledExceptionBehaviour<,>)
             );
         });
-        services.AddScoped<IValidator<CreateTodoRequest>, CreateTodoRequestValidator>();
+
+        _ = services.AddAutoMapper(c => c.AddProfile(new DigitalInfo.Mapper.AutoMapperProfile()));
 
         return services;
     }

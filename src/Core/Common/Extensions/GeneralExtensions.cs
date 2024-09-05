@@ -13,4 +13,16 @@ public static class GeneralExtensions
     {
         return currentUser.Claims.Single(c => c.Type.Equals("UserName")).Value;
     }
+
+    public static int GetTerminalId(this ClaimsPrincipal currentUser)
+    {
+        return int.Parse(
+            currentUser.Claims.Single(c => c.Type.ToLower().Equals("terminalid")).Value
+        );
+    }
+
+    public static int GetClientId(this ClaimsPrincipal currentUser)
+    {
+        return int.Parse(currentUser.Claims.Single(c => c.Type.ToLower().Equals("clientid")).Value);
+    }
 }

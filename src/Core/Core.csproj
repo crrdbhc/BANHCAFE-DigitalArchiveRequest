@@ -15,4 +15,11 @@
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="DigitalInfo\Commands\Create\" />
+    <Folder Include="DigitalInfo\Commands\Delete\" />
+    <Folder Include="DigitalInfo\Commands\Update\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+
 </Project>
