@@ -1,5 +1,7 @@
 using System.Reflection;
 using Banhcafe.Microservices.DigitalArchiveRequest.Core.Common.Behaviours;
+using Banhcafe.Microservices.DigitalArchiveRequest.Core.DigitalInfo.Models;
+using Banhcafe.Microservices.DigitalArchiveRequest.Core.DigitalInfo.Validators;
 using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
@@ -21,6 +23,11 @@ public static class DependencyInjection
         });
 
         _ = services.AddAutoMapper(c => c.AddProfile(new DigitalInfo.Mapper.AutoMapperProfile()));
+
+        services.AddScoped<
+            IValidator<PopulateDataDigitalArchive>,
+            PopulateDataDigitalArchiveComparerValidator
+        >();
 
         return services;
     }

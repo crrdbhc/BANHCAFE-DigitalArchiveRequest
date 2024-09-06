@@ -41,6 +41,7 @@ public static class DependencyInjection
         >(settingsAction: (sp) => new() { }, httpClientName: "DBClient");
 
         services.AddScoped<IDigitalArchiveComparerRepository, DigitalArchiveComparerRepository>();
+
         return services;
     }
 
@@ -79,6 +80,6 @@ public static class DependencyInjection
                     BackoffType = DelayBackoffType.Exponential
                 }
             )
-            .AddTimeout(new HttpTimeoutStrategyOptions() { Timeout = TimeSpan.FromMinutes(2), });
+            .AddTimeout(new HttpTimeoutStrategyOptions() { Timeout = TimeSpan.FromMinutes(10), });
     }
 }

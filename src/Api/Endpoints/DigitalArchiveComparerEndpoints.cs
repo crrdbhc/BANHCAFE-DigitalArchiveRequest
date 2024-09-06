@@ -1,6 +1,7 @@
 ﻿using Banhcafe.Microservices.DigitalArchiveRequest.Api.Endpoints.Filters;
 using Banhcafe.Microservices.DigitalArchiveRequest.Api.Options;
 using Banhcafe.Microservices.DigitalArchiveRequest.Core.Common.Contracts.Response;
+using Banhcafe.Microservices.DigitalArchiveRequest.Core.DigitalInfo.Commands.Create;
 using Banhcafe.Microservices.DigitalArchiveRequest.Core.DigitalInfo.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -74,6 +75,37 @@ public static class DigitalArchiveComparerEndpoints
             .ProducesProblem(StatusCodes.Status500InternalServerError)
             .ProducesValidationProblem();
 
+        _ = backOfficeEndpoints
+            .MapPost(
+                "/populate",
+                static async (
+                    IFeatureManager features,
+                    IMediator mediator,
+                    PopulateDataDigitalArchiveComparerCommand request
+                ) =>
+                {
+                    var result = await mediator.Send(request);
+
+                    if (result.ValidationErrors.Count > 0)
+                    {
+                        return Results.BadRequest(result);
+                    }
+
+                    if (result.Errors.Count > 0)
+                    {
+                        return Results.BadRequest(result);
+                    }
+
+                    return Results.Ok(result);
+                }
+            )
+            .WithDisplayName("PopulateData")
+            .WithName("PopulateData")
+            .WithMetadata(new FeatureGateAttribute("BOF-populate_DataArchiveDigital"))
+            .Produces<ApiResponse<PopulateDataDigitalArchiveComparerCommand>>()
+            .ProducesProblem(StatusCodes.Status400BadRequest)
+            .ProducesProblem(StatusCodes.Status500InternalServerError)
+            .ProducesValidationProblem();
         return endpoints;
     }
 }
