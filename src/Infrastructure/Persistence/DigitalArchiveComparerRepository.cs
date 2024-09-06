@@ -47,6 +47,7 @@ public class DigitalArchiveComparerRepository(
                 )
             )!,
         };
+
         var response = await api.Process(logger, request, cancellationToken);
         return response;
     }

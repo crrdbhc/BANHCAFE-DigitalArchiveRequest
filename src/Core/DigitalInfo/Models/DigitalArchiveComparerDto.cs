@@ -9,6 +9,10 @@ namespace Banhcafe.Microservices.DigitalArchiveRequest.Core.DigitalInfo.Models;
 
 public class DigitalArchiveComparerBase : BaseQueryResponseDto
 {
+    public int? RowId { get; set; }
+    public int? Size { get; set; }
+    public int? TotalRows { get; set; }
+    public int? TotalCount { get; set; }
     public int? AgencyNum { get; set; }
     public string? ClientNum { get; set; }
     public string? ClientCoreName { get; set; }

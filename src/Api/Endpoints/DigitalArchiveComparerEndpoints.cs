@@ -11,7 +11,9 @@ namespace Banhcafe.Microservices.DigitalArchiveRequest.Api.Endpoints;
 
 public static class DigitalArchiveComparerEndpoints
 {
-    public static IEndpointRouteBuilder AddDigitalArchiveComparerEndpoints(this IEndpointRouteBuilder endpoints)
+    public static IEndpointRouteBuilder AddDigitalArchiveComparerEndpoints(
+        this IEndpointRouteBuilder endpoints
+    )
     {
         var versionSet = endpoints
             .NewApiVersionSet()
@@ -40,7 +42,16 @@ public static class DigitalArchiveComparerEndpoints
                     [FromQuery] int? size
                 ) =>
                 {
-                    var result = await mediator.Send(new ListDigitalArchiveComparerQuery { AgencyNum = agencyNum, ProductNum = productNum, ClientNum = clientNum });
+                    var result = await mediator.Send(
+                        new ListDigitalArchiveComparerQuery
+                        {
+                            AgencyNum = agencyNum,
+                            ProductNum = productNum,
+                            ClientNum = clientNum,
+                            Page = page,
+                            Size = size
+                        }
+                    );
 
                     if (result.ValidationErrors.Count > 0)
                     {
