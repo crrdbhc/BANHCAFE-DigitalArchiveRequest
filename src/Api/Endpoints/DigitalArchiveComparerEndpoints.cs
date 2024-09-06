@@ -68,7 +68,7 @@ public static class DigitalArchiveComparerEndpoints
             )
             .WithDisplayName("GetDigitalArchiveComparerInfo")
             .WithName("GetDigitalArchiveComparerInfo")
-            .WithMetadata(new FeatureGateAttribute("BOF-get_DigitalInfo"))
+            .WithMetadata(new FeatureGateAttribute("BOF-get_ArchiveDigitalInfo"))
             .Produces<ApiResponse<ListDigitalArchiveComparerQuery>>()
             .ProducesProblem(StatusCodes.Status400BadRequest)
             .ProducesProblem(StatusCodes.Status500InternalServerError)
