@@ -2,11 +2,11 @@
 using Banhcafe.Microservices.DigitalArchiveRequest.Core.Common.Contracts.Response;
 using Banhcafe.Microservices.DigitalArchiveRequest.Core.Common.Extensions;
 using Banhcafe.Microservices.DigitalArchiveRequest.Core.Common.Ports;
-using Banhcafe.Microservices.DigitalArchiveRequest.Core.DigitalInfo.Models;
-using Banhcafe.Microservices.DigitalArchiveRequest.Core.DigitalInfo.Ports;
+using Banhcafe.Microservices.DigitalArchiveRequest.Core.ComparerCoreAD.Models;
+using Banhcafe.Microservices.DigitalArchiveRequest.Core.ComparerCoreAD.Ports;
 using MediatR;
 
-namespace Banhcafe.Microservices.DigitalArchiveRequest.Core.DigitalInfo.Queries;
+namespace Banhcafe.Microservices.DigitalArchiveRequest.Core.ComparerCoreAD.Queries;
 
 public sealed class ListDigitalArchiveComparerQuery
     : BaseQuery,

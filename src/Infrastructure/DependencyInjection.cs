@@ -1,7 +1,7 @@
 ﻿using System.Net;
 using Banhcafe.Microservices.DigitalArchiveRequest.Core.Common;
-using Banhcafe.Microservices.DigitalArchiveRequest.Core.DigitalInfo.Models;
-using Banhcafe.Microservices.DigitalArchiveRequest.Core.DigitalInfo.Ports;
+using Banhcafe.Microservices.DigitalArchiveRequest.Core.ComparerCoreAD.Models;
+using Banhcafe.Microservices.DigitalArchiveRequest.Core.ComparerCoreAD.Ports;
 using Banhcafe.Microservices.DigitalArchiveRequest.Infrastructure.Common.Ports;
 using Banhcafe.Microservices.DigitalArchiveRequest.Infrastructure.Persistence;
 using Microsoft.Extensions.Configuration;
@@ -30,7 +30,7 @@ public static class DependencyInjection
                     client.BaseAddress = new Uri(
                         dbSettings.Get(DatabaseSettingsInstances.SQL).DatabaseApiUrl
                     );
-                    client.Timeout = TimeSpan.FromMinutes(3);
+                    client.Timeout = TimeSpan.FromMinutes(10);
                 }
             )
             .ConfigurePrimaryHttpMessageHandler(PrimaryHttpMessageHandler)

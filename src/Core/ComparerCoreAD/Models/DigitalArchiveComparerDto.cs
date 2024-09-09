@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Banhcafe.Microservices.DigitalArchiveRequest.Core.Common.Contracts.Response;
 
-namespace Banhcafe.Microservices.DigitalArchiveRequest.Core.DigitalInfo.Models;
+namespace Banhcafe.Microservices.DigitalArchiveRequest.Core.ComparerCoreAD.Models;
 
 public class DigitalArchiveComparerBase : BaseQueryResponseDto
 {
@@ -26,7 +26,7 @@ public class DigitalArchiveComparerBase : BaseQueryResponseDto
     public string? ProductInCore { get; set; }
     public string? ProductInOnBase { get; set; }
     public string? Match { get; set; }
-    public string? Response { get; set; }
+    public string? Message { get; set; }
 }
 
 public class ViewDigitalArchiveComparerDto : IBaseQueryDto

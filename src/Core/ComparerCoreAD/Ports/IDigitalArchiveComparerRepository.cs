@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Banhcafe.Microservices.DigitalArchiveRequest.Core.Common.Ports;
-using Banhcafe.Microservices.DigitalArchiveRequest.Core.DigitalInfo.Models;
+using Banhcafe.Microservices.DigitalArchiveRequest.Core.ComparerCoreAD.Models;
 
-namespace Banhcafe.Microservices.DigitalArchiveRequest.Core.DigitalInfo.Ports;
+namespace Banhcafe.Microservices.DigitalArchiveRequest.Core.ComparerCoreAD.Ports;
 
 public interface IDigitalArchiveComparerRepository
     : IGenericRepository<DigitalArchiveComparerBase, ViewDigitalArchiveComparerDto>

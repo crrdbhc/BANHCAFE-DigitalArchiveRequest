@@ -7,12 +7,12 @@ using AutoMapper;
 using Banhcafe.Microservices.DigitalArchiveRequest.Core.Common.Contracts.Response;
 using Banhcafe.Microservices.DigitalArchiveRequest.Core.Common.Exceptions;
 using Banhcafe.Microservices.DigitalArchiveRequest.Core.Common.Ports;
-using Banhcafe.Microservices.DigitalArchiveRequest.Core.DigitalInfo.Models;
-using Banhcafe.Microservices.DigitalArchiveRequest.Core.DigitalInfo.Ports;
+using Banhcafe.Microservices.DigitalArchiveRequest.Core.ComparerCoreAD.Models;
+using Banhcafe.Microservices.DigitalArchiveRequest.Core.ComparerCoreAD.Ports;
 using FluentValidation;
 using MediatR;
 
-namespace Banhcafe.Microservices.DigitalArchiveRequest.Core.DigitalInfo.Commands.Create
+namespace Banhcafe.Microservices.DigitalArchiveRequest.Core.ComparerCoreAD.Commands.Create
 {
     public sealed class PopulateDataDigitalArchiveComparerCommand
         : IRequest<ApiResponse<DigitalArchiveComparerBase>>

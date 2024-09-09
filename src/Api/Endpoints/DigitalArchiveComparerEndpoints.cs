@@ -1,8 +1,8 @@
 ﻿using Banhcafe.Microservices.DigitalArchiveRequest.Api.Endpoints.Filters;
 using Banhcafe.Microservices.DigitalArchiveRequest.Api.Options;
 using Banhcafe.Microservices.DigitalArchiveRequest.Core.Common.Contracts.Response;
-using Banhcafe.Microservices.DigitalArchiveRequest.Core.DigitalInfo.Commands.Create;
-using Banhcafe.Microservices.DigitalArchiveRequest.Core.DigitalInfo.Queries;
+using Banhcafe.Microservices.DigitalArchiveRequest.Core.ComparerCoreAD.Commands.Create;
+using Banhcafe.Microservices.DigitalArchiveRequest.Core.ComparerCoreAD.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.FeatureManagement;
@@ -23,9 +23,9 @@ public static class DigitalArchiveComparerEndpoints
             .Build();
 
         var backOfficeEndpoints = endpoints
-            .MapGroup("/backOffice/archive-digital-comparer")
+            .MapGroup("/backOffice/ad-core-comparer")
             .AddEndpointFilter<FeatureGateEndpointFilter>()
-            .WithTags("DigitalInfo")
+            .WithTags("ComparerCoreAD")
             .WithApiVersionSet(versionSet)
             .RequireAuthorization(AuthenticationPolicy.BackOffice);
 
@@ -69,7 +69,7 @@ public static class DigitalArchiveComparerEndpoints
             )
             .WithDisplayName("GetDigitalArchiveComparerInfo")
             .WithName("GetDigitalArchiveComparerInfo")
-            .WithMetadata(new FeatureGateAttribute("BOF-get_ArchiveDigitalInfo"))
+            .WithMetadata(new FeatureGateAttribute("BOF-get_ComparerCoreVsADData"))
             .Produces<ApiResponse<ListDigitalArchiveComparerQuery>>()
             .ProducesProblem(StatusCodes.Status400BadRequest)
             .ProducesProblem(StatusCodes.Status500InternalServerError)
@@ -101,7 +101,7 @@ public static class DigitalArchiveComparerEndpoints
             )
             .WithDisplayName("PopulateData")
             .WithName("PopulateData")
-            .WithMetadata(new FeatureGateAttribute("BOF-populate_DataArchiveDigital"))
+            .WithMetadata(new FeatureGateAttribute("BOF-populate_ComparerCoreVsADData"))
             .Produces<ApiResponse<PopulateDataDigitalArchiveComparerCommand>>()
             .ProducesProblem(StatusCodes.Status400BadRequest)
             .ProducesProblem(StatusCodes.Status500InternalServerError)

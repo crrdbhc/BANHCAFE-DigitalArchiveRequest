@@ -1,8 +1,8 @@
 ﻿using System.Text.Json;
 using BANHCAFE.Cross.DBConnection;
 using Banhcafe.Microservices.DigitalArchiveRequest.Core.Common;
-using Banhcafe.Microservices.DigitalArchiveRequest.Core.DigitalInfo.Models;
-using Banhcafe.Microservices.DigitalArchiveRequest.Core.DigitalInfo.Ports;
+using Banhcafe.Microservices.DigitalArchiveRequest.Core.ComparerCoreAD.Models;
+using Banhcafe.Microservices.DigitalArchiveRequest.Core.ComparerCoreAD.Ports;
 using Banhcafe.Microservices.DigitalArchiveRequest.Infrastructure.Common.Extensions;
 using Banhcafe.Microservices.DigitalArchiveRequest.Infrastructure.Common.Ports;
 using Microsoft.Extensions.Logging;
@@ -20,7 +20,7 @@ public class DigitalArchiveComparerRepository(
         DatabaseSettingsInstances.SQL
     );
 
-    internal const string QueryCommand = "SP_SELALL_DIGITALINFO";
+    internal const string QueryCommand = "SP_SELALL_COREADCOMPARER";
     internal const string PopulateCommand = "SP_INS_ONBASECOREDATA";
 
     public async Task<IEnumerable<DigitalArchiveComparerBase>> List(
