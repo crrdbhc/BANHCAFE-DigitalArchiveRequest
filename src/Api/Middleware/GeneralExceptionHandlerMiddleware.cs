@@ -1,7 +1,7 @@
 using System.Text.Json;
-using Banhcafe.Microservices.DigitalArchiveRequest.Core.Common.Contracts.Response;
+using Banhcafe.Microservices.ComparerCoreVsAD.Core.Common.Contracts.Response;
 
-namespace Banhcafe.Microservices.DigitalArchiveRequest.Api.Middleware;
+namespace Banhcafe.Microservices.ComparerCoreVsAD.Api.Middleware;
 
 public class GlobalExceptionHandlerMiddleware(
     ILogger<GlobalExceptionHandlerMiddleware> logger,

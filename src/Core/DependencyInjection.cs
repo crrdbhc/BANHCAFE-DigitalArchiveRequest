@@ -1,12 +1,12 @@
 using System.Reflection;
-using Banhcafe.Microservices.DigitalArchiveRequest.Core.Common.Behaviours;
-using Banhcafe.Microservices.DigitalArchiveRequest.Core.ComparerCoreAD.Models;
-using Banhcafe.Microservices.DigitalArchiveRequest.Core.ComparerCoreAD.Validators;
+using Banhcafe.Microservices.ComparerCoreVsAD.Core.Common.Behaviours;
+using Banhcafe.Microservices.ComparerCoreVsAD.Core.ComparerCoreAD.Models;
+using Banhcafe.Microservices.ComparerCoreVsAD.Core.ComparerCoreAD.Validators;
 using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Banhcafe.Microservices.DigitalArchiveRequest.Core;
+namespace Banhcafe.Microservices.ComparerCoreVsAD.Core;
 
 public static class DependencyInjection
 {

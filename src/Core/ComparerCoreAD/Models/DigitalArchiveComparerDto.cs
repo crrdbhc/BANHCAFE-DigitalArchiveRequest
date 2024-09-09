@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Banhcafe.Microservices.DigitalArchiveRequest.Core.Common.Contracts.Response;
+using Banhcafe.Microservices.ComparerCoreVsAD.Core.Common.Contracts.Response;
 
-namespace Banhcafe.Microservices.DigitalArchiveRequest.Core.ComparerCoreAD.Models;
+namespace Banhcafe.Microservices.ComparerCoreVsAD.Core.ComparerCoreAD.Models;
 
 public class DigitalArchiveComparerBase : BaseQueryResponseDto
 {

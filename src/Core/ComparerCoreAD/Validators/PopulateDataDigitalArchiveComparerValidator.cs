@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Banhcafe.Microservices.DigitalArchiveRequest.Core.ComparerCoreAD.Models;
+using Banhcafe.Microservices.ComparerCoreVsAD.Core.ComparerCoreAD.Models;
 using FluentValidation;
 
-namespace Banhcafe.Microservices.DigitalArchiveRequest.Core.ComparerCoreAD.Validators;
+namespace Banhcafe.Microservices.ComparerCoreVsAD.Core.ComparerCoreAD.Validators;
 
 public class PopulateDataDigitalArchiveComparerValidator
     : AbstractValidator<PopulateDataDigitalArchive>

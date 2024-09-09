@@ -1,14 +1,14 @@
-﻿using Banhcafe.Microservices.DigitalArchiveRequest.Api.Endpoints.Filters;
-using Banhcafe.Microservices.DigitalArchiveRequest.Api.Options;
-using Banhcafe.Microservices.DigitalArchiveRequest.Core.Common.Contracts.Response;
-using Banhcafe.Microservices.DigitalArchiveRequest.Core.ComparerCoreAD.Commands.Create;
-using Banhcafe.Microservices.DigitalArchiveRequest.Core.ComparerCoreAD.Queries;
+﻿using Banhcafe.Microservices.ComparerCoreVsAD.Api.Endpoints.Filters;
+using Banhcafe.Microservices.ComparerCoreVsAD.Api.Options;
+using Banhcafe.Microservices.ComparerCoreVsAD.Core.Common.Contracts.Response;
+using Banhcafe.Microservices.ComparerCoreVsAD.Core.ComparerCoreAD.Commands.Create;
+using Banhcafe.Microservices.ComparerCoreVsAD.Core.ComparerCoreAD.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.FeatureManagement;
 using Microsoft.FeatureManagement.Mvc;
 
-namespace Banhcafe.Microservices.DigitalArchiveRequest.Api.Endpoints;
+namespace Banhcafe.Microservices.ComparerCoreVsAD.Api.Endpoints;
 
 public static class DigitalArchiveComparerEndpoints
 {

@@ -1,6 +1,6 @@
 using System.Security.Claims;
 
-namespace Banhcafe.Microservices.DigitalArchiveRequest.Core.Common.Extensions;
+namespace Banhcafe.Microservices.ComparerCoreVsAD.Core.Common.Extensions;
 
 public static class GeneralExtensions
 {

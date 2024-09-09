@@ -6,7 +6,7 @@ using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
-namespace Banhcafe.Microservices.DigitalArchiveRequest.Api.Options;
+namespace Banhcafe.Microservices.ComparerCoreVsAD.Api.Options;
 
 public static class SwaggerOptions
 {

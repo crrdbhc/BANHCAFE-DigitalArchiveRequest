@@ -1,14 +1,14 @@
 ﻿using System.Text.Json;
 using BANHCAFE.Cross.DBConnection;
-using Banhcafe.Microservices.DigitalArchiveRequest.Core.Common;
-using Banhcafe.Microservices.DigitalArchiveRequest.Core.ComparerCoreAD.Models;
-using Banhcafe.Microservices.DigitalArchiveRequest.Core.ComparerCoreAD.Ports;
-using Banhcafe.Microservices.DigitalArchiveRequest.Infrastructure.Common.Extensions;
-using Banhcafe.Microservices.DigitalArchiveRequest.Infrastructure.Common.Ports;
+using Banhcafe.Microservices.ComparerCoreVsAD.Core.Common;
+using Banhcafe.Microservices.ComparerCoreVsAD.Core.ComparerCoreAD.Models;
+using Banhcafe.Microservices.ComparerCoreVsAD.Core.ComparerCoreAD.Ports;
+using Banhcafe.Microservices.ComparerCoreVsAD.Infrastructure.Common.Extensions;
+using Banhcafe.Microservices.ComparerCoreVsAD.Infrastructure.Common.Ports;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
-namespace Banhcafe.Microservices.DigitalArchiveRequest.Infrastructure.Persistence;
+namespace Banhcafe.Microservices.ComparerCoreVsAD.Infrastructure.Persistence;
 
 public class DigitalArchiveComparerRepository(
     ILogger<DigitalArchiveComparerRepository> logger,
@@ -22,6 +22,7 @@ public class DigitalArchiveComparerRepository(
 
     internal const string QueryCommand = "SP_SELALL_COREADCOMPARER";
     internal const string PopulateCommand = "SP_INS_ONBASECOREDATA";
+    internal const string GetLastMigrationData = "SP_SEL_LASTPROCESS";
 
     public async Task<IEnumerable<DigitalArchiveComparerBase>> List(
         ViewDigitalArchiveComparerDto dto,

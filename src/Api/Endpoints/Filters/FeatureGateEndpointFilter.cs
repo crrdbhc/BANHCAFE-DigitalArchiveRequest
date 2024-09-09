@@ -2,7 +2,7 @@ using System.Net;
 using Microsoft.FeatureManagement;
 using Microsoft.FeatureManagement.Mvc;
 
-namespace Banhcafe.Microservices.DigitalArchiveRequest.Api.Endpoints.Filters;
+namespace Banhcafe.Microservices.ComparerCoreVsAD.Api.Endpoints.Filters;
 
 public class FeatureGateEndpointFilter(IFeatureManager featureManager) : IEndpointFilter
 {

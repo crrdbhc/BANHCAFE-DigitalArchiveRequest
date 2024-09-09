@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Banhcafe.Microservices.DigitalArchiveRequest.Core.Common.Ports;
-using Banhcafe.Microservices.DigitalArchiveRequest.Core.ComparerCoreAD.Models;
+using Banhcafe.Microservices.ComparerCoreVsAD.Core.Common.Ports;
+using Banhcafe.Microservices.ComparerCoreVsAD.Core.ComparerCoreAD.Models;
 
-namespace Banhcafe.Microservices.DigitalArchiveRequest.Core.ComparerCoreAD.Ports;
+namespace Banhcafe.Microservices.ComparerCoreVsAD.Core.ComparerCoreAD.Ports;
 
 public interface IDigitalArchiveComparerRepository
     : IGenericRepository<DigitalArchiveComparerBase, ViewDigitalArchiveComparerDto>

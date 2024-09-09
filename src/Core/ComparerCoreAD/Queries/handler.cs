@@ -1,12 +1,12 @@
 ﻿using AutoMapper;
-using Banhcafe.Microservices.DigitalArchiveRequest.Core.Common.Contracts.Response;
-using Banhcafe.Microservices.DigitalArchiveRequest.Core.Common.Extensions;
-using Banhcafe.Microservices.DigitalArchiveRequest.Core.Common.Ports;
-using Banhcafe.Microservices.DigitalArchiveRequest.Core.ComparerCoreAD.Models;
-using Banhcafe.Microservices.DigitalArchiveRequest.Core.ComparerCoreAD.Ports;
+using Banhcafe.Microservices.ComparerCoreVsAD.Core.Common.Contracts.Response;
+using Banhcafe.Microservices.ComparerCoreVsAD.Core.Common.Extensions;
+using Banhcafe.Microservices.ComparerCoreVsAD.Core.Common.Ports;
+using Banhcafe.Microservices.ComparerCoreVsAD.Core.ComparerCoreAD.Models;
+using Banhcafe.Microservices.ComparerCoreVsAD.Core.ComparerCoreAD.Ports;
 using MediatR;
 
-namespace Banhcafe.Microservices.DigitalArchiveRequest.Core.ComparerCoreAD.Queries;
+namespace Banhcafe.Microservices.ComparerCoreVsAD.Core.ComparerCoreAD.Queries;
 
 public sealed class ListDigitalArchiveComparerQuery
     : BaseQuery,

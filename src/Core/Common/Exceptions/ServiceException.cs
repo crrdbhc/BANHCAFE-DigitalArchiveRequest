@@ -1,4 +1,4 @@
-namespace Banhcafe.Microservices.DigitalArchiveRequest.Core.Common.Exceptions;
+namespace Banhcafe.Microservices.ComparerCoreVsAD.Core.Common.Exceptions;
 
 public sealed class ServiceException : Exception
 {

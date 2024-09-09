@@ -1,4 +1,4 @@
-namespace Banhcafe.Microservices.DigitalArchiveRequest.Core.Common;
+namespace Banhcafe.Microservices.ComparerCoreVsAD.Core.Common;
 
 public static class JWTSettingsSections
 {

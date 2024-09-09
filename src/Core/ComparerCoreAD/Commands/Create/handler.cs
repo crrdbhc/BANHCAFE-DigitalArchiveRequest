@@ -4,15 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
-using Banhcafe.Microservices.DigitalArchiveRequest.Core.Common.Contracts.Response;
-using Banhcafe.Microservices.DigitalArchiveRequest.Core.Common.Exceptions;
-using Banhcafe.Microservices.DigitalArchiveRequest.Core.Common.Ports;
-using Banhcafe.Microservices.DigitalArchiveRequest.Core.ComparerCoreAD.Models;
-using Banhcafe.Microservices.DigitalArchiveRequest.Core.ComparerCoreAD.Ports;
+using Banhcafe.Microservices.ComparerCoreVsAD.Core.Common.Contracts.Response;
+using Banhcafe.Microservices.ComparerCoreVsAD.Core.Common.Exceptions;
+using Banhcafe.Microservices.ComparerCoreVsAD.Core.Common.Ports;
+using Banhcafe.Microservices.ComparerCoreVsAD.Core.ComparerCoreAD.Models;
+using Banhcafe.Microservices.ComparerCoreVsAD.Core.ComparerCoreAD.Ports;
 using FluentValidation;
 using MediatR;
 
-namespace Banhcafe.Microservices.DigitalArchiveRequest.Core.ComparerCoreAD.Commands.Create
+namespace Banhcafe.Microservices.ComparerCoreVsAD.Core.ComparerCoreAD.Commands.Create
 {
     public sealed class PopulateDataDigitalArchiveComparerCommand
         : IRequest<ApiResponse<DigitalArchiveComparerBase>>

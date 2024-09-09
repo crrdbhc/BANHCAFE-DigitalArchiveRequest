@@ -2,7 +2,7 @@ using OpenTelemetry.Exporter;
 using OpenTelemetry.Resources;
 using OpenTelemetry.Trace;
 
-namespace Banhcafe.Microservices.DigitalArchiveRequest.Api.Options;
+namespace Banhcafe.Microservices.ComparerCoreVsAD.Api.Options;
 
 public static class TracingOptions
 {
@@ -11,7 +11,7 @@ public static class TracingOptions
         IConfiguration configuration
     )
     {
-        var applicationName = "DigitalArchiveRequest";
+        var applicationName = "ComparerCoreVsAD";
         var applicationVersion = configuration["ApplicationVersion"] ?? "1";
 
         services

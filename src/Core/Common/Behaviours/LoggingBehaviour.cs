@@ -1,7 +1,7 @@
 using MediatR;
 using Microsoft.Extensions.Logging;
 
-namespace Banhcafe.Microservices.DigitalArchiveRequest.Core.Common.Behaviours;
+namespace Banhcafe.Microservices.ComparerCoreVsAD.Core.Common.Behaviours;
 
 public class LoggingBehaviour<TRequest, TResponse>(
     ILogger<LoggingBehaviour<TRequest, TResponse>> logger

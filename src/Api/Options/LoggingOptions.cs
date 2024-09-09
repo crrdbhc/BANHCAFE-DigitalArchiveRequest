@@ -5,13 +5,13 @@ using Serilog.Formatting.Json;
 using Serilog.Sinks.Elasticsearch;
 using Serilog.Sinks.SystemConsole.Themes;
 
-namespace Banhcafe.Microservices.DigitalArchiveRequest.Api.Options;
+namespace Banhcafe.Microservices.ComparerCoreVsAD.Api.Options;
 
 public static class LogginOptions
 {
     public static IHostBuilder AddLoggingOptions(this WebApplicationBuilder builder)
     {
-        var applicationName = "DigitalArchiveRequest";
+        var applicationName = "ComparerCoreVsAD";
 
         return builder.Host.UseSerilog(
             (context, configuration) =>
@@ -47,7 +47,7 @@ public static class LogginOptions
             NumberOfReplicas = 1,
             AutoRegisterTemplate = true,
             OverwriteTemplate = true,
-            TemplateName = "DigitalArchiveRequest",
+            TemplateName = "ComparerCoreVsAD",
             AutoRegisterTemplateVersion = AutoRegisterTemplateVersion.ESv7,
             TypeName = null,
             BatchAction = ElasticOpType.Create,

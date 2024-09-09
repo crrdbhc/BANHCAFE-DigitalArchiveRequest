@@ -1,10 +1,10 @@
 using System.Text;
-using Banhcafe.Microservices.DigitalArchiveRequest.Core.Common;
+using Banhcafe.Microservices.ComparerCoreVsAD.Core.Common;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 
-namespace Banhcafe.Microservices.DigitalArchiveRequest.Api.Options;
+namespace Banhcafe.Microservices.ComparerCoreVsAD.Api.Options;
 
 public static class AuthenticationPolicy
 {

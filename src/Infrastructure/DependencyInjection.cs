@@ -1,9 +1,9 @@
 ﻿using System.Net;
-using Banhcafe.Microservices.DigitalArchiveRequest.Core.Common;
-using Banhcafe.Microservices.DigitalArchiveRequest.Core.ComparerCoreAD.Models;
-using Banhcafe.Microservices.DigitalArchiveRequest.Core.ComparerCoreAD.Ports;
-using Banhcafe.Microservices.DigitalArchiveRequest.Infrastructure.Common.Ports;
-using Banhcafe.Microservices.DigitalArchiveRequest.Infrastructure.Persistence;
+using Banhcafe.Microservices.ComparerCoreVsAD.Core.Common;
+using Banhcafe.Microservices.ComparerCoreVsAD.Core.ComparerCoreAD.Models;
+using Banhcafe.Microservices.ComparerCoreVsAD.Core.ComparerCoreAD.Ports;
+using Banhcafe.Microservices.ComparerCoreVsAD.Infrastructure.Common.Ports;
+using Banhcafe.Microservices.ComparerCoreVsAD.Infrastructure.Persistence;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Http.Resilience;
@@ -12,7 +12,7 @@ using Polly;
 using Polly.Timeout;
 using Refit;
 
-namespace Banhcafe.Microservices.DigitalArchiveRequest.Infrastructure;
+namespace Banhcafe.Microservices.ComparerCoreVsAD.Infrastructure;
 
 public static class DependencyInjection
 {

@@ -1,4 +1,4 @@
-namespace Banhcafe.Microservices.DigitalArchiveRequest.Core.Common.Contracts.Response;
+namespace Banhcafe.Microservices.ComparerCoreVsAD.Core.Common.Contracts.Response;
 
 public sealed class ApiResponse<TResponse>
 {

@@ -1,7 +1,7 @@
 using System.Security.Claims;
-using Banhcafe.Microservices.DigitalArchiveRequest.Core.Common.Ports;
+using Banhcafe.Microservices.ComparerCoreVsAD.Core.Common.Ports;
 
-namespace Banhcafe.Microservices.DigitalArchiveRequest.Api.Options;
+namespace Banhcafe.Microservices.ComparerCoreVsAD.Api.Options;
 
 public class UserContext : IUserContext
 {

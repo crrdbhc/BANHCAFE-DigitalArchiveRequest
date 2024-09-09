@@ -3,7 +3,7 @@ using OpenTelemetry.Metrics;
 using OpenTelemetry.Resources;
 using OpenTelemetry.Trace;
 
-namespace Banhcafe.Microservices.DigitalArchiveRequest.Api.Options;
+namespace Banhcafe.Microservices.ComparerCoreVsAD.Api.Options;
 
 public static class MetricsOptions
 {
@@ -12,7 +12,7 @@ public static class MetricsOptions
         IConfiguration configuration
     )
     {
-        var applicationName = "DigitalArchiveRequest";
+        var applicationName = "ComparerCoreVsAD";
         var applicationVersion = configuration["ApplicationVersion"] ?? "1";
         var assemblyVersion =
             Assembly.GetExecutingAssembly().GetName().Version?.ToString() ?? "unknown";

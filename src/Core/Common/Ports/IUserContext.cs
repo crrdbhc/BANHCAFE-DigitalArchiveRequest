@@ -1,6 +1,6 @@
 using System.Security.Claims;
 
-namespace Banhcafe.Microservices.DigitalArchiveRequest.Core.Common.Ports;
+namespace Banhcafe.Microservices.ComparerCoreVsAD.Core.Common.Ports;
 
 /// <summary>
 /// access user claims from JWT

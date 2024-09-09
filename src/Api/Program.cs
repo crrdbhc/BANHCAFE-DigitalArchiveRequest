@@ -1,11 +1,11 @@
 using Asp.Versioning;
-using Banhcafe.Microservices.DigitalArchiveRequest.Api.Endpoints;
-using Banhcafe.Microservices.DigitalArchiveRequest.Api.Middleware;
-using Banhcafe.Microservices.DigitalArchiveRequest.Api.Options;
-using Banhcafe.Microservices.DigitalArchiveRequest.Core;
-using Banhcafe.Microservices.DigitalArchiveRequest.Core.Common;
-using Banhcafe.Microservices.DigitalArchiveRequest.Core.Common.Ports;
-using Banhcafe.Microservices.DigitalArchiveRequest.Infrastructure;
+using Banhcafe.Microservices.ComparerCoreVsAD.Api.Endpoints;
+using Banhcafe.Microservices.ComparerCoreVsAD.Api.Middleware;
+using Banhcafe.Microservices.ComparerCoreVsAD.Api.Options;
+using Banhcafe.Microservices.ComparerCoreVsAD.Core;
+using Banhcafe.Microservices.ComparerCoreVsAD.Core.Common;
+using Banhcafe.Microservices.ComparerCoreVsAD.Core.Common.Ports;
+using Banhcafe.Microservices.ComparerCoreVsAD.Infrastructure;
 using Microsoft.FeatureManagement;
 using Serilog;
 
