@@ -1,4 +1,5 @@
 using System.Reflection;
+using System.Security.Cryptography;
 using Banhcafe.Microservices.ComparerCoreVsAD.Core.Common.Behaviours;
 using Banhcafe.Microservices.ComparerCoreVsAD.Core.ComparerCoreAD.Models;
 using Banhcafe.Microservices.ComparerCoreVsAD.Core.ComparerCoreAD.Validators;
@@ -25,6 +26,8 @@ public static class DependencyInjection
         _ = services.AddAutoMapper(c =>
             c.AddProfile(new ComparerCoreAD.Mapper.AutoMapperProfile())
         );
+
+        _ = services.AddAutoMapper(c => c.AddProfile(new Migrations.Mapper.AutoMapperProfile()));
 
         services.AddScoped<
             IValidator<PopulateDataDigitalArchive>,

@@ -91,6 +91,7 @@ try
     app.MapHealthChecks("/health").AllowAnonymous();
     app.UseMiddleware<GlobalExceptionHandlerMiddleware>();
     app.AddDigitalArchiveComparerEndpoints();
+    app.AddMigrationsEndpoints();
     #endregion endpoints
 
     if (app.Environment.IsDevelopment())

@@ -22,7 +22,6 @@ public class DigitalArchiveComparerRepository(
 
     internal const string QueryCommand = "SP_SELALL_COREADCOMPARER";
     internal const string PopulateCommand = "SP_INS_ONBASECOREDATA";
-    internal const string GetLastMigrationData = "SP_SEL_LASTPROCESS";
 
     public async Task<IEnumerable<DigitalArchiveComparerBase>> List(
         ViewDigitalArchiveComparerDto dto,

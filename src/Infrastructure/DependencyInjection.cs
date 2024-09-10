@@ -2,6 +2,8 @@
 using Banhcafe.Microservices.ComparerCoreVsAD.Core.Common;
 using Banhcafe.Microservices.ComparerCoreVsAD.Core.ComparerCoreAD.Models;
 using Banhcafe.Microservices.ComparerCoreVsAD.Core.ComparerCoreAD.Ports;
+using Banhcafe.Microservices.ComparerCoreVsAD.Core.Migrations.Models;
+using Banhcafe.Microservices.ComparerCoreVsAD.Core.Migrations.Ports;
 using Banhcafe.Microservices.ComparerCoreVsAD.Infrastructure.Common.Ports;
 using Banhcafe.Microservices.ComparerCoreVsAD.Infrastructure.Persistence;
 using Microsoft.Extensions.Configuration;
@@ -40,7 +42,13 @@ public static class DependencyInjection
             ISqlDbConnectionApiExtensions<object, IEnumerable<DigitalArchiveComparerBase>>
         >(settingsAction: (sp) => new() { }, httpClientName: "DBClient");
 
+        services.AddRefitClient<ISqlDbConnectionApiExtensions<object, IEnumerable<MigrationsBase>>>(
+            settingsAction: (sp) => new() { },
+            httpClientName: "DBClient"
+        );
+
         services.AddScoped<IDigitalArchiveComparerRepository, DigitalArchiveComparerRepository>();
+        services.AddScoped<IMigrationsRepository, MigrationsRepository>();
 
         return services;
     }
