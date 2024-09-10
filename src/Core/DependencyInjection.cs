@@ -2,7 +2,8 @@ using System.Reflection;
 using System.Security.Cryptography;
 using Banhcafe.Microservices.ComparerCoreVsAD.Core.Common.Behaviours;
 using Banhcafe.Microservices.ComparerCoreVsAD.Core.ComparerCoreAD.Models;
-using Banhcafe.Microservices.ComparerCoreVsAD.Core.ComparerCoreAD.Validators;
+using Banhcafe.Microservices.ComparerCoreVsAD.Core.Migrations.Models;
+using Banhcafe.Microservices.ComparerCoreVsAD.Core.Migrations.Validators;
 using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
@@ -29,10 +30,7 @@ public static class DependencyInjection
 
         _ = services.AddAutoMapper(c => c.AddProfile(new Migrations.Mapper.AutoMapperProfile()));
 
-        services.AddScoped<
-            IValidator<PopulateDataDigitalArchive>,
-            PopulateDataDigitalArchiveComparerValidator
-        >();
+        services.AddScoped<IValidator<CreateMigrations>, CreateMigrationsValidators>();
 
         return services;
     }

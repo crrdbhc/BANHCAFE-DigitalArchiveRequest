@@ -12,4 +12,9 @@ public interface IGenericRepository<TResponse, TFilterRequest>
         TFilterRequest dto = default,
         CancellationToken cancellationToken = default
     );
+
+    Task<TResponse> View(
+        TFilterRequest dto = default,
+        CancellationToken cancellationToken = default
+    );
 }

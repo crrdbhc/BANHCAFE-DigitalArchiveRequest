@@ -2,6 +2,7 @@ using System.Security.Cryptography;
 using Banhcafe.Microservices.ComparerCoreVsAD.Api.Endpoints.Filters;
 using Banhcafe.Microservices.ComparerCoreVsAD.Api.Options;
 using Banhcafe.Microservices.ComparerCoreVsAD.Core.Common.Contracts.Response;
+using Banhcafe.Microservices.ComparerCoreVsAD.Core.Migrations.Commands.Create;
 using Banhcafe.Microservices.ComparerCoreVsAD.Core.Migrations.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -57,6 +58,38 @@ public static class MigrationsEndpoints
             .WithName("GetLastMigration")
             .WithMetadata(new FeatureGateAttribute("BOF-get_LastMigrationData"))
             .Produces<ApiResponse<ListMigrationsQuery>>()
+            .ProducesProblem(StatusCodes.Status400BadRequest)
+            .ProducesProblem(StatusCodes.Status500InternalServerError)
+            .ProducesValidationProblem();
+
+        _ = backOfficeEndpoints
+            .MapPost(
+                "/populate",
+                static async (
+                    IFeatureManager features,
+                    IMediator mediator,
+                    CreateMigrationsCommand request
+                ) =>
+                {
+                    var result = await mediator.Send(request);
+
+                    if (result.ValidationErrors.Count > 0)
+                    {
+                        return Results.BadRequest(result);
+                    }
+
+                    if (result.Errors.Count > 0)
+                    {
+                        return Results.BadRequest(result);
+                    }
+
+                    return Results.Ok(result);
+                }
+            )
+            .WithDisplayName("PopulateData")
+            .WithName("PopulateData")
+            .WithMetadata(new FeatureGateAttribute("BOF-populate_ComparerCoreVsADData"))
+            .Produces<ApiResponse<CreateMigrationsCommand>>()
             .ProducesProblem(StatusCodes.Status400BadRequest)
             .ProducesProblem(StatusCodes.Status500InternalServerError)
             .ProducesValidationProblem();

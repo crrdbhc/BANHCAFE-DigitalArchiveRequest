@@ -14,6 +14,5 @@ public sealed class AutoMapperProfile : Profile
     public AutoMapperProfile()
     {
         CreateMap<ListDigitalArchiveComparerQuery, ViewDigitalArchiveComparerDto>();
-        CreateMap<PopulateDataDigitalArchive, PopulateDataDigitalArchiveComparerDto>();
     }
 }

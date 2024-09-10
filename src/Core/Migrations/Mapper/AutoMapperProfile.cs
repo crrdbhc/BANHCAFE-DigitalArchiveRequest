@@ -10,5 +10,6 @@ public sealed class AutoMapperProfile : Profile
     public AutoMapperProfile()
     {
         CreateMap<ListMigrationsQuery, ViewMigrationsDto>();
+        CreateMap<CreateMigrations, CreateMigrationsDto>();
     }
 }

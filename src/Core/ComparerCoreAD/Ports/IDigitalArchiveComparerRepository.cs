@@ -15,9 +15,4 @@ public interface IDigitalArchiveComparerRepository
         ViewDigitalArchiveComparerDto filtersDto,
         CancellationToken cancellationToken
     );
-
-    Task<DigitalArchiveComparerBase> Populate(
-        PopulateDataDigitalArchiveComparerDto dto,
-        CancellationToken cancellationToken
-    );
 }

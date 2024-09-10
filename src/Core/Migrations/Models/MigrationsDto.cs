@@ -10,6 +10,10 @@ public class MigrationsBase : BaseQueryResponseDto
     public bool? WithErrors { get; set; }
 }
 
+public class CreateMigrations { }
+
+public class CreateMigrationsDto : CreateMigrations { }
+
 public class ViewMigrationsDto : IBaseQueryDto
 {
     public int? TerminalId { get; set; }

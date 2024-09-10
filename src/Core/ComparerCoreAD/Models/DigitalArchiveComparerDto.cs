@@ -26,7 +26,6 @@ public class DigitalArchiveComparerBase : BaseQueryResponseDto
     public string? ProductInCore { get; set; }
     public string? ProductInOnBase { get; set; }
     public string? Match { get; set; }
-    public string? Message { get; set; }
 }
 
 public class ViewDigitalArchiveComparerDto : IBaseQueryDto
@@ -38,7 +37,3 @@ public class ViewDigitalArchiveComparerDto : IBaseQueryDto
     public int? Page { get; set; }
     public int? Size { get; set; }
 }
-
-public class PopulateDataDigitalArchive { }
-
-public class PopulateDataDigitalArchiveComparerDto { }
